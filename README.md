@@ -14,6 +14,8 @@ Repositório referente ao processo seletivo para estágio na DTI. Instruções f
 ## Instruções para Executar o Sistema
 
 (As instruções para executar o sistema serão adicionadas assim que o desenvolvimento for concluído.)
+- C#
+- SQL Server
 
 ## Decisões de Projeto
 

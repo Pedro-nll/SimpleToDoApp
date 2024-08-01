@@ -1,0 +1,12 @@
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/bin/Debug/net8.0/TesteDTI.Contracts.deps.json
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/bin/Debug/net8.0/TesteDTI.Contracts.dll
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/bin/Debug/net8.0/TesteDTI.Contracts.pdb
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/TesteDTI.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/TesteDTI.Contracts.AssemblyInfoInputs.cache
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/TesteDTI.Contracts.AssemblyInfo.cs
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/TesteDTI.Contracts.csproj.CoreCompileInputs.cache
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/TesteDTI.Contracts.sourcelink.json
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/TesteDTI.Contracts.dll
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/refint/TesteDTI.Contracts.dll
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/TesteDTI.Contracts.pdb
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/TesteDTI.Contracts/obj/Debug/net8.0/ref/TesteDTI.Contracts.dll

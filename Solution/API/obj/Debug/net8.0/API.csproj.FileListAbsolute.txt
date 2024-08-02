@@ -32,3 +32,6 @@
 /home/pedro/Desktop/Projetos/TesteDTI/Solution/API/obj/Debug/net8.0/API.pdb
 /home/pedro/Desktop/Projetos/TesteDTI/Solution/API/obj/Debug/net8.0/API.genruntimeconfig.cache
 /home/pedro/Desktop/Projetos/TesteDTI/Solution/API/obj/Debug/net8.0/ref/API.dll
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/API/bin/Debug/net8.0/TesteDTI.Contracts.dll
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/API/bin/Debug/net8.0/TesteDTI.Contracts.pdb
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/API/bin/Debug/net8.0/ErrorOr.dll

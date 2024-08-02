@@ -12,8 +12,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
+    app.UseCors(policy =>
+    {
+        policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+
+
     app.UseExceptionHandler("/error");
-    app.UseHttpsRedirection();
+    app.UseRouting();
+    app.UseAuthorization();
+    
     app.MapControllers();
 }
 
@@ -24,5 +36,3 @@ if (app.Environment.IsDevelopment())
 }
 
 app.Run();
-
-

@@ -15,18 +15,22 @@ function App() {
   const fetchReminders = async () => {
     try{
       const response = await REST.getRequest("/reminders")
-      const data = await response.json();
-      setReminders(data);
+      
+      setReminders(response);
     }catch (e){
       console.error(e)
     }
   };
 
   const addReminder = async (reminder) => {
-    const response = await REST.postRequest("/reminders", JSON.stringify(reminder))
+    try{
+      const response = await REST.postRequest("/reminders", JSON.stringify(reminder))
     
-    const newReminder = await response.json();
-    setReminders((prevReminders) => [...prevReminders, newReminder]);
+      setReminders((prevReminders) => [...prevReminders, response.data]);
+    }catch (e){
+      console.error(e)
+    }
+    
   };
 
   const deleteReminder = async (id) => {

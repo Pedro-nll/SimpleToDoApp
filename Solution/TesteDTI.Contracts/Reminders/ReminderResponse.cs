@@ -1,5 +1,3 @@
-
-
 namespace TesteDTI.Contracts.Reminders;
 
 public record ReminderResponse(

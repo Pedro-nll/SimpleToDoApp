@@ -1,0 +1,72 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reminder-form {
+  width: 40%;
+}
+
+.reminder-form h2,
+.reminder-list h2 {
+  margin-bottom: 1rem;
+}
+
+.reminder-form form div {
+  margin-bottom: 1rem;
+}
+
+.reminder-form form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.reminder-form form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.reminder-form form button:hover {
+  background-color: #0056b3;
+}
+
+.reminder-list {
+  width: 55%;
+}
+
+.reminder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.reminder div {
+  margin-right: 1rem;
+}
+
+.reminder button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+.reminder button:hover {
+  color: darkred;
+}

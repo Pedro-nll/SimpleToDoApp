@@ -10,11 +10,12 @@
 .app-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 10rem; 
 }
 
 .reminder-form {
   width: 100%;
+  margin: 0 auto; 
 }
 
 .reminder-form h2,
@@ -34,7 +35,7 @@
 }
 
 .reminder-form form button {
-  width: 100%; 
+  width: 110%; 
   padding: 0.5rem 1rem;
   background-color: #007bff;
   color: white;
@@ -83,7 +84,6 @@
   background-color: lightgreen;
 }
 
-
 .flash {
   background-color: green;
   transition: background-color 0.5s ease;
@@ -110,4 +110,3 @@
     flex-direction: column;
   }
 }
-

@@ -14,8 +14,13 @@ Repositório referente ao processo seletivo para estágio na DTI. Instruções f
 ## Instruções para Executar o Sistema
 
 (As instruções para executar o sistema serão adicionadas assim que o desenvolvimento for concluído.)
-- C#
+
+# Tecnologias/Ferramentas/Linguagens utilizadas
+- C#/React
 - SQL Server
+- ErrorOr (C# Error Handling)
+- Axios (Chamadas do React para a API)
+- Swagger (Docs interativos para a API)
 
 ## Decisões de Projeto
 

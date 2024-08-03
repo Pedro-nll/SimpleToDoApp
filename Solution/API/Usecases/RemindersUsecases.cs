@@ -1,4 +1,5 @@
 using API.Entities;
+using API.Repositories.Interfaces;
 using API.Usecases.Errors;
 using API.Usecases.Interfaces;
 using ErrorOr;
@@ -7,27 +8,25 @@ namespace API.Usecases;
 
 public class RemindersUsecases : IRemindersUsecases
 {
-    private static readonly Dictionary<Guid, Reminder> _reminders = new Dictionary<Guid, Reminder>();
+    private readonly IReminderRepository _reminderRepository;
+
+    public RemindersUsecases(IReminderRepository reminderRepository)
+    {
+        _reminderRepository = reminderRepository;
+    }
+
     public ErrorOr<Created> CreateReminder(Reminder reminder)
     {
-        _reminders.Add(reminder.Id, reminder);
-
-        return Result.Created;
+        return _reminderRepository.CreateReminder(reminder);
     }
 
     public IEnumerable<Reminder> GetAllReminders()
     {
-        return _reminders.Values;
+        return _reminderRepository.GetAllReminders();
     }
 
     public ErrorOr<Deleted> DeleteReminder(Guid id)
     {
-        if (_reminders.TryGetValue(id, out var reminder))
-        {
-            _reminders.Remove(id);
-            return Result.Deleted;
-        }
-
-        return RemindersErrors.Reminders.NotFound;
+        return _reminderRepository.DeleteReminder(id);
     }
 }

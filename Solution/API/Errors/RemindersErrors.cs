@@ -18,5 +18,10 @@ public static class RemindersErrors
             "Reminder.NotFound",
             "Reminder was not found."
         );
+        
+        public static Error UnexpectedError => Error.Unexpected(
+            "Reminder.Unexpected",
+            "Some Unexpected error happened."
+        );
     }
 }

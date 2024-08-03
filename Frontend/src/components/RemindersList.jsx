@@ -4,7 +4,7 @@ const ReminderList = ({ reminders, onDeleteReminder }) => {
   return (
     <div className="reminder-list">
       <h2>Lista de lembretes</h2>
-      {reminders.map((reminder) => {
+      {reminders && reminders.map((reminder) => {
         const date = new Date(reminder.date);
         const formattedDate = date.toLocaleDateString('pt-BR');
         return (

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Function to group reminders by date
 const groupRemindersByDate = (reminders) => {
   return reminders.reduce((groups, reminder) => {
     const dateParts = reminder.date.split('T')[0].split('-');
@@ -15,6 +16,7 @@ const groupRemindersByDate = (reminders) => {
   }, {});
 };
 
+// Function to sort dates
 const sortDates = (dates) => {
   return dates.sort((a, b) => {
     const dateA = a.split('/').reverse().join('');
@@ -23,7 +25,7 @@ const sortDates = (dates) => {
   });
 };
 
-const ReminderList = ({ reminders, onDeleteReminder }) => {
+const ReminderList = ({ reminders, onDeleteReminder, deletingReminderId, addingReminderId }) => {
   const groupedReminders = groupRemindersByDate(reminders);
   const sortedDates = sortDates(Object.keys(groupedReminders));
 
@@ -34,7 +36,10 @@ const ReminderList = ({ reminders, onDeleteReminder }) => {
         <div key={date} className="reminder-group">
           <h3>{date}</h3>
           {groupedReminders[date].map((reminder) => (
-            <div key={reminder.id} className="reminder">
+            <div
+              key={reminder.id}
+              className={`reminder ${deletingReminderId === reminder.id ? 'deleting' : ''} ${addingReminderId === reminder.id ? 'adding' : ''}`}
+            >
               <div>
                 {reminder.name}
                 <button onClick={() => onDeleteReminder(reminder.id)}>❌</button>

@@ -7,6 +7,8 @@ import { APIReq } from './APIReq';
 function App() {
   const [reminders, setReminders] = useState([]);
   const [error, setError] = useState('');
+  const [deletingReminderId, setDeletingReminderId] = useState(null);
+  const [addingReminderId, setAddingReminderId] = useState(null); // New state for added reminder
   const REST = new APIReq("http://localhost:5107");
 
   useEffect(() => {
@@ -29,8 +31,11 @@ function App() {
         setError('Falha ao adicionar lembrete. Verifique se a data é futura e o nome válido.');
       }
       else{
+        setAddingReminderId(response.data.id); // Set the ID of the added reminder
         setReminders((prevReminders) => [...prevReminders, response.data]);
         setError('');
+        // Clear the ID after a short delay to allow animation
+        setTimeout(() => setAddingReminderId(null), 500);
       }
     } catch (e) {
       console.error("Failed to add reminder:", e);
@@ -39,8 +44,11 @@ function App() {
 
   const deleteReminder = async (id) => {
     try {
+      setDeletingReminderId(id);
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for the red flash animation
       await REST.deleteRequest(`/reminders/${id}`);
       setReminders((prevReminders) => prevReminders.filter((reminder) => reminder.id !== id));
+      setDeletingReminderId(null);
     } catch (e) {
       console.error("Failed to delete reminder:", e);
     }
@@ -49,7 +57,12 @@ function App() {
   return (
     <div className="app-container">
       <ReminderForm onAddReminder={addReminder} error={error} />
-      <ReminderList reminders={reminders} onDeleteReminder={deleteReminder} />
+      <ReminderList
+        reminders={reminders}
+        onDeleteReminder={deleteReminder}
+        deletingReminderId={deletingReminderId}
+        addingReminderId={addingReminderId}
+      />
     </div>
   );
 }

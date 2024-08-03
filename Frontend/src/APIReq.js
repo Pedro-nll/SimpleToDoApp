@@ -39,14 +39,25 @@ export class APIReq {
                     'Content-Type': 'application/json'
                 }
             };
-
+    
             const response = await axios.post(`${this.host}${path}`, body, config);
-
+    
             return response;
         } catch (error) {
-            console.error('Error:', error);
+            if (error.response) {
+                console.error(`Error: ${error.response.status} - ${error.response.statusText}`);
+                return { status: error.response.status, title: error.response.statusText };
+            } else if (error.request) {
+                console.error('Error: No response received');
+                return { status: null, title: 'No response received' };
+            } else {
+                console.error('Error:', error.message);
+                return { status: null, title: error.message };
+            }
+            
         }
     }
+    
 
     async deleteRequest(path) {
         try {

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-const ReminderForm = ({ onAddReminder }) => {
+const ReminderForm = ({ onAddReminder, error }) => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
-  const [error, setError] = useState('');
 
   // Function to validate date format
   const validateDate = (dateString) => {
@@ -26,7 +25,6 @@ const ReminderForm = ({ onAddReminder }) => {
         onAddReminder({ name, date: formattedDate });
         setName('');
         setDate('');
-        setError('');
       } else {
         setError('Data inválida. Use o formato dd/mm/yyyy.');
       }

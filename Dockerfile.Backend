@@ -1,0 +1,21 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+WORKDIR /app
+
+COPY ./Solution/API/API.csproj ./API/
+COPY ./Solution/TesteDTI.Contracts/TesteDTI.Contracts.csproj ./TesteDTI.Contracts/
+
+RUN dotnet restore ./API/API.csproj
+RUN dotnet restore ./TesteDTI.Contracts/TesteDTI.Contracts.csproj
+
+COPY ./Solution .
+
+RUN dotnet build ./API/API.csproj -c Release -o /app/build
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/build .
+
+EXPOSE 80
+
+ENTRYPOINT ["dotnet", "API.dll"]

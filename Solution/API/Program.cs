@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllers();
 
-    // Add Entity Framework Core with SQLite or another provider
     builder.Services.AddDbContext<ReminderDbContext>(options =>
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 

@@ -1,6 +1,6 @@
 # TesteDTI
 
-Repositório referente ao processo seletivo para estágio na DTI. Instruções fornecidas no [pdf](docs/1.0%20-%20Teste%20dti%20-%20Dev%20Estágio.pdf).
+Repositório referente ao processo seletivo para estágio na DTI. Instruções fornecidas no [pdf](docs/1.0%20-%20Teste%20dti%20-%20Dev%20Estágio.pdf). Documentação das portas da API disponíveis em [MD](docs/api.md) ou pelo Swagger (http://localhost:5107/swagger/index.html).
 
 **Nome completo:** Pedro Negri Leão Lambert  
 **Email:** Pedronll@outlook.com     
@@ -13,13 +13,31 @@ Repositório referente ao processo seletivo para estágio na DTI. Instruções f
 
 ## Instruções para Executar o Sistema
 
-(As instruções para executar o sistema serão adicionadas assim que o desenvolvimento for concluído.)
+### Docker-Compose
+```bash
+docker-compose up --build
+```
 
-# Tecnologias/Ferramentas/Linguagens utilizadas
+### Docker
+```bash
+docker build -t apidockerimage -f Dockerfile.Backend .
+docker run -d -p 5107:80 --name apidockercontainer apidockerimage
+docker build -t react-app -f Dockerfile-Frontend .
+docker run -d -p 3000:80 --name reactappdockercontainer react-app
+```
+
+### Manual
+```bash
+dotnet run --project ./Solution/API/
+npm --prefix ./Frontend run dev
+```
+
+## Tecnologias/Ferramentas/Linguagens utilizadas
 - C#/React/SQLite
 - ErrorOr (C# Error Handling)
 - Axios (Chamadas do React para a API)
 - Swagger (Docs interativos para a API)
+- Docker && Docker-compose
 
 ## Decisões de Projeto
 

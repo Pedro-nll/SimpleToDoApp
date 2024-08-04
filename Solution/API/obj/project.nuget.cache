@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Fo/wmlcXICdmh7zU0e3g2PsUHYN5C8ZJ0QMniSLa4BBYNvh+rND56/WrbsXtdXaCPjzV3Rvl/j/NB6WYUQq+0Q==",
+  "dgSpecHash": "fGCVIoHt/z4=",
   "success": true,
   "projectFilePath": "/home/pedro/Desktop/Projetos/TesteDTI/Solution/API/API.csproj",
   "expectedPackageFiles": [
+    "/home/pedro/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/erroror/2.0.1/erroror.2.0.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/pedro/.nuget/packages/microsoft.aspnetcore.openapi/8.0.7/microsoft.aspnetcore.openapi.8.0.7.nupkg.sha512",
@@ -35,6 +36,7 @@
     "/home/pedro/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/home/pedro/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/home/pedro/.nuget/packages/moq/4.20.70/moq.4.20.70.nupkg.sha512",
     "/home/pedro/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "/home/pedro/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
     "/home/pedro/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
@@ -51,6 +53,7 @@
     "/home/pedro/.nuget/packages/system.composition.hosting/6.0.0/system.composition.hosting.6.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.composition.runtime/6.0.0/system.composition.runtime.6.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.composition.typedparts/6.0.0/system.composition.typedparts.6.0.0.nupkg.sha512",
+    "/home/pedro/.nuget/packages/system.diagnostics.eventlog/6.0.0/system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/home/pedro/.nuget/packages/system.reflection.metadata/6.0.1/system.reflection.metadata.6.0.1.nupkg.sha512",

@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const ReminderForm = ({ onAddReminder, error }) => {
+const ReminderForm = ({ onAddReminder, errorArg }) => {
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
+  const [error, setError] = useState('');
 
-  // Function to validate date format
   const validateDate = (dateString) => {
     const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
     return regex.test(dateString);
   };
 
-  // Function to convert date to ISO 8601 format
   const convertDateToISO = (dateString) => {
     const [day, month, year] = dateString.split('/');
     const date = new Date(`${year}-${month}-${day}`);
@@ -25,9 +24,12 @@ const ReminderForm = ({ onAddReminder, error }) => {
         onAddReminder({ name, date: formattedDate });
         setName('');
         setDate('');
+        setError('')
       } else {
         setError('Data inválida. Use o formato dd/mm/yyyy.');
       }
+    } else {
+      setError('Preencha todos os campos.');
     }
   };
 

@@ -29,11 +29,13 @@ docker run -d -p 3000:80 --name reactappdockercontainer react-app
 ### Manual
 ```bash
 dotnet run --project ./Solution/API/
+npm --prefix ./Frontend install 
 npm --prefix ./Frontend run dev
 ```
 
 ## Tecnologias/Ferramentas/Linguagens utilizadas
 - C#/React/SQLite
+- XUnit (X% Test Coverage)
 - ErrorOr (C# Error Handling)
 - Axios (Chamadas do React para a API)
 - Swagger (Docs interativos para a API)
@@ -75,3 +77,12 @@ Por último, o princípio de segregação de interfaces é o único que não ser
 
 ![Arquitetura da aplicação](docs/arquitetura.png)
 
+#### TODO
+Separar os usecases
+Colocar o reminder no lugar de entities na foto da arq
+gifs fucnionando
+
+### EXPOR ESSES NO MD
+limite maximo (300 chars)
+validação de chars (utf8)
+scroll

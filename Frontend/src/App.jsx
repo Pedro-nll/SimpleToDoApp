@@ -8,7 +8,7 @@ function App() {
   const [reminders, setReminders] = useState([]);
   const [error, setError] = useState('');
   const [deletingReminderId, setDeletingReminderId] = useState(null);
-  const [addingReminderId, setAddingReminderId] = useState(null); // New state for added reminder
+  const [addingReminderId, setAddingReminderId] = useState(null);
   const REST = new APIReq("http://localhost:5107");
 
   useEffect(() => {
@@ -18,39 +18,46 @@ function App() {
   const fetchReminders = async () => {
     try {
       const response = await REST.getRequest("/reminders");
+      if (!response) {
+        alert("Não foi possível buscar os lembretes. Verifique se a API está disponível.")
+        return;
+      }
       setReminders(response);
+      setError('');
     } catch (e) {
       console.error("Failed to fetch reminders:", e);
+      setError("Não foi possível buscar os lembretes.");
     }
   };
 
   const addReminder = async (reminder) => {
     try {
       const response = await REST.postRequest("/reminders", JSON.stringify(reminder));
-      if (response.status == 400){
+      if (response.status === 400) {
         setError('Falha ao adicionar lembrete. Verifique se a data é futura e o nome válido.');
-      }
-      else{
-        setAddingReminderId(response.data.id); // Set the ID of the added reminder
+      } else {
+        setError('');
+        setAddingReminderId(response.data.id); 
         setReminders((prevReminders) => [...prevReminders, response.data]);
         setError('');
-        // Clear the ID after a short delay to allow animation
-        setTimeout(() => setAddingReminderId(null), 500);
+        setTimeout(() => setAddingReminderId(null), 300);
       }
     } catch (e) {
       console.error("Failed to add reminder:", e);
+      setError("Falha ao adicionar lembrete.");
     }
   };
 
   const deleteReminder = async (id) => {
     try {
       setDeletingReminderId(id);
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Wait for the red flash animation
+      await new Promise((resolve) => setTimeout(resolve, 300));
       await REST.deleteRequest(`/reminders/${id}`);
       setReminders((prevReminders) => prevReminders.filter((reminder) => reminder.id !== id));
       setDeletingReminderId(null);
     } catch (e) {
       console.error("Failed to delete reminder:", e);
+      setError("Falha ao deletar lembrete.");
     }
   };
 

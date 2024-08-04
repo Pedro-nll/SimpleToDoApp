@@ -6,14 +6,9 @@ using ErrorOr;
 
 namespace API.Usecases;
 
-public class RemindersUsecases : IRemindersUsecases
+public class RemindersUsecases(IReminderRepository reminderRepository) : IRemindersUsecases
 {
-    private readonly IReminderRepository _reminderRepository;
-
-    public RemindersUsecases(IReminderRepository reminderRepository)
-    {
-        _reminderRepository = reminderRepository;
-    }
+    private readonly IReminderRepository _reminderRepository = reminderRepository;
 
     public ErrorOr<Created> CreateReminder(Reminder reminder)
     {

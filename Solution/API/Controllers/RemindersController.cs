@@ -12,6 +12,7 @@ public class RemindersController(IRemindersUsecases remindersUseCases) : ApiCont
     [HttpPost()]
     public IActionResult CreateReminder(CreateReminderRequest request)
     {
+        //TODO: REFATORAR PRA MANDAR PRO CreateREminderUsecase o reuqest e ele cria o reminder
         var requestToReminderResult = Reminder.Create(request.Name, request.Date);
 
         if (requestToReminderResult.IsError)

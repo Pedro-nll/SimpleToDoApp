@@ -19,7 +19,7 @@ function App() {
     try {
       const response = await REST.getRequest("/reminders");
       if (!response) {
-        alert("Não foi possível buscar os lembretes. Verifique se a API está disponível.")
+        setError("Não foi possível buscar os lembretes. Verifique se a API está disponível.")
         return;
       }
       setReminders(response);
@@ -31,6 +31,7 @@ function App() {
   };
 
   const addReminder = async (reminder) => {
+    setError('')
     try {
       const response = await REST.postRequest("/reminders", JSON.stringify(reminder));
       if (response.status === 400) {
@@ -63,7 +64,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <ReminderForm onAddReminder={addReminder} error={error} />
+      <ReminderForm onAddReminder={addReminder} errorArg={error} />
       <ReminderList
         reminders={reminders}
         onDeleteReminder={deleteReminder}

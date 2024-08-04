@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TesteDTI.Contracts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a98b527e42041f1df575dffb2ca36b9e1fe3a8da")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78c7313a00df2b7431a1ca20b16f5c4f237a6f9d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TesteDTI.Contracts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TesteDTI.Contracts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

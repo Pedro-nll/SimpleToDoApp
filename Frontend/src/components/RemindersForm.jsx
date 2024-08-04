@@ -5,6 +5,10 @@ const ReminderForm = ({ onAddReminder, errorArg }) => {
   const [date, setDate] = useState('');
   const [error, setError] = useState('');
 
+  useEffect(() => {
+    setError(errorArg)
+  }, [errorArg])
+
   const validateDate = (dateString) => {
     const regex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
     return regex.test(dateString);

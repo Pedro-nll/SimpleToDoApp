@@ -38,6 +38,7 @@ npm --prefix ./Frontend run dev
 - Axios (Chamadas do React para a API)
 - Swagger (Docs interativos para a API)
 - Docker && Docker-compose
+- Postcss
 
 ## Decisões de Projeto
 

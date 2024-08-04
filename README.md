@@ -7,6 +7,15 @@ Repositório referente ao processo seletivo para estágio na DTI. Instruções f
 **Linkedin:** https://www.linkedin.com/in/pedro-nllambert/  
 **Telefone:** 31 99828-8251  
 
+- [Premissas Assumidas](#premissas-assumidas)
+- [Instruções para Executar o Sistema](#instruções-para-executar-o-sistema)
+    - [Com docker-compose](#docker-compose)
+    - [Com docker](#docker)
+    - [Sem containers ("manual")](#manual)
+- [Tecnologias, ferramentas e linguagens utilizadas](#tecnologiasferramentaslinguagens-utilizadas)
+- [Decisões de projeto: arquitetura da solução e processo de desenvolvimento](#decisões-de-projeto)
+- [GIFs da aplicação funcionando](#gifs-com-a-aplicação-funcionando)
+
 ## Premissas Assumidas
 
 - Não será necessário autenticação/validação, visto que isso não foi definido no PDF de instruções.
@@ -77,12 +86,22 @@ Por último, o princípio de segregação de interfaces é o único que não ser
 
 ![Arquitetura da aplicação](docs/arquitetura.png)
 
+
+Alguns detalhes importantes da implementação são:
+
+- Além da validação dos dados no front-end, padronizei os modelos de entrada e saída em "contracts" e utilizei o design pattern abstract factory para a criação dos lembretes, aplicando as regras de negócio.
+- Adicionei validações para datas mal formatadas, datas passadas e nomes inexistentes. Também incluí a validação de limite máximo no tamanho dos nomes para garantir que não armazenaremos dados excessivamente grandes no banco de dados.
+- Implementei a validação de caracteres UTF-8 para garantir que não serão salvos caracteres problemáticos no banco de dados.
+- A interface da aplicação possui scroll na lista de lembretes e regras CSS para dispositivos com telas pequenas, garantindo uma experiência de usuário adequada em diferentes dispositivos.
+
+
+## GIFs com a aplicação funcionando
+
+
 #### TODO
 Separar os usecases
-Colocar o reminder no lugar de entities na foto da arq
 gifs fucnionando
 
 ### EXPOR ESSES NO MD
 limite maximo (300 chars)
 validação de chars (utf8)
-scroll

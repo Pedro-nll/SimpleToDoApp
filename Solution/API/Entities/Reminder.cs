@@ -1,3 +1,4 @@
+using System.Text;
 using API.Usecases.Errors;
 using ErrorOr;
 
@@ -17,23 +18,45 @@ public class Reminder
     }
 
     public static ErrorOr<Reminder> Create(string name, DateTime date)
+{
+    List<Error> errors = new();
+
+    if (string.IsNullOrWhiteSpace(name))
     {
-        List<Error> errors = new();
-        if (string.IsNullOrWhiteSpace(name))
-        {
-            errors.Add(RemindersErrors.Reminders.InvalidName);
-        }
-        if (date <= DateTime.Now)
-        {
-            errors.Add(RemindersErrors.Reminders.InvalidDate);
-        }
-
-        if (errors.Count > 0)
-        {
-            return errors;
-        }
-
-        return new Reminder(Guid.NewGuid(), name, date);
+        errors.Add(RemindersErrors.Reminders.InvalidName);
+    }
+    else if (name.Length > 300)
+    {
+        errors.Add(RemindersErrors.Reminders.InvalidName);
+    }
+    else if (!IsValidUtf8(name))
+    {
+        errors.Add(RemindersErrors.Reminders.InvalidName);
     }
 
+    if (date <= DateTime.Now)
+    {
+        errors.Add(RemindersErrors.Reminders.InvalidDate);
+    }
+
+    if (errors.Count > 0)
+    {
+        return errors;
+    }
+
+    return new Reminder(Guid.NewGuid(), name, date);
+}
+
+    private static bool IsValidUtf8(string text)
+    {
+        try
+        {
+            Encoding.UTF8.GetBytes(text);
+            return true;
+        }
+        catch (EncoderFallbackException)
+        {
+            return false;
+        }
+    }
 }

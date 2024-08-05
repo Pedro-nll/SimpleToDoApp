@@ -10,6 +10,7 @@ function App() {
   const [deletingReminderId, setDeletingReminderId] = useState(null);
   const [addingReminderId, setAddingReminderId] = useState(null);
   const REST = new APIReq("http://localhost:5107");
+  //const REST = new APIReq("http://backend:8080");
 
   useEffect(() => {
     fetchReminders();

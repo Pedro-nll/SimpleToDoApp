@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.Frontend
     ports:
-      - "3000:80"
+      - "5173:80"
     networks:
       - app-network
 
@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: Dockerfile.Backend
     ports:
-      - "5107:80" 
+      - "5107:8080" 
     networks:
       - app-network
 

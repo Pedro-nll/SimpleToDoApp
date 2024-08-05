@@ -24,6 +24,8 @@ Repositório referente ao processo seletivo para estágio na DTI. Instruções f
 - Não será necessário autenticação/validação, visto que isso não foi definido no PDF de instruções.
 
 ## Instruções para Executar o Sistema
+Aplicação acessível por http://localhost:5173 ou 
+Documentação da API acessível por http://localhost:5107/swagger/index.html
 
 ### Docker-Compose
 ```bash
@@ -70,16 +72,16 @@ Para a realização do projeto comecei organizando os requisitos. Pensando prime
 
 Além disso, já organizei quais testes automáticos seriam necessários para garantir o funcionamento desejado da API:
 
-| Test Name                          | Done |
-|------------------------------------|------|
-| Criar lembrete                     |      |
-| Criar lembrete sem nome            |      |
-| Criar lembrete sem data            |      |
-| Criar lembrete com data má formatada |      |
-| Criar lembrete sem nome nem data   |      |
-| Deletar lembrete                   |      |
-| Deletar lembrete inexistente       |      |
-| Buscar todos lembretes             |      |
+| Test Name                            | Done   |
+|--------------------------------------|--------|
+| Criar lembrete                       |    X   |
+| Criar lembrete sem nome              |    X   |
+| Criar lembrete sem data              |    X   |
+| Criar lembrete com data má formatada |    X   |
+| Criar lembrete sem nome nem data     |    X   |
+| Deletar lembrete                     |    X   |
+| Deletar lembrete inexistente         |    X   |
+| Buscar todos lembretes               |    X   |
 
 Antes de começar a programar a API, tomei as decisões arquiteturais necessárias para garantir que minha aplicação fosse bem desenvolvida. Para isso, utilizei a arquitetura limpa, preocupando-me com todos os princípios SOLID e com a coesão dos componentes, de modo a garantir que a aplicação fosse consistente em todos os seus níveis.
 

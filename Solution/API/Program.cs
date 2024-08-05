@@ -26,10 +26,9 @@ var app = builder.Build();
     app.UseCors(policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173")
+            .AllowAnyOrigin()
             .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials();
+            .AllowAnyMethod();
     });
 
     app.UseExceptionHandler("/error");

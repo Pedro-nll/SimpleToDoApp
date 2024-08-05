@@ -7,7 +7,7 @@ using TesteDTI.Contracts.Reminders;
 
 namespace API.Usecases;
 
-public class RemindersUsecases(IReminderRepository reminderRepository) : IRemindersUsecases
+public class RemindersUsecases(IReminderRepository reminderRepository) : IRem
 {
     private readonly IReminderRepository _reminderRepository = reminderRepository;
 

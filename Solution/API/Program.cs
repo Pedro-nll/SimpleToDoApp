@@ -12,7 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
         options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
     builder.Services.AddScoped<IReminderRepository, ReminderRepository>();
-    builder.Services.AddScoped<IRemindersUsecases, RemindersUsecases>();
+    builder.Services.AddScoped<IRemindersGetByIdUseCase, RemindersGetByIdUseCase>();
+    builder.Services.AddScoped<IRemindersCreateUseCase, RemindersCreateUseCase>();
+    builder.Services.AddScoped<IRemindersDeleteUseCase, RemindersDeleteUseCase>();
+    builder.Services.AddScoped<IRemindersGetAllUseCase, RemindersGetAllUseCase>();
 
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();

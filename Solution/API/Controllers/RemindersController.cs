@@ -5,14 +5,21 @@ using Microsoft.AspNetCore.Mvc;
 using TesteDTI.Contracts.Reminders;
 
 namespace API.Controllers;
-public class RemindersController(IRemindersUsecases remindersUseCases) : ApiController
+public class RemindersController(
+    IRemindersCreateUseCase remindersCreateUseCase, 
+    IRemindersDeleteUseCase remindersDeleteUseCase,
+    IRemindersGetAllUseCase remindersGetAllUseCase,
+    IRemindersGetByIdUseCase remindersGetByIdUseCase) : ApiController
 {
-    private readonly IRemindersUsecases _remindersUseCases = remindersUseCases;
+    private readonly IRemindersCreateUseCase _remindersCreateUseCase = remindersCreateUseCase;
+    private readonly IRemindersDeleteUseCase _remindersDeleteUseCase = remindersDeleteUseCase;
+    private readonly IRemindersGetAllUseCase _remindersGetAllUseCase = remindersGetAllUseCase;
+    private readonly IRemindersGetByIdUseCase _remindersGetByIdUseCase = remindersGetByIdUseCase;
     
     [HttpPost]
     public IActionResult CreateReminder(CreateReminderRequest request)
     {
-        ErrorOr<Reminder> createReminderResult = _remindersUseCases.CreateReminder(request);
+        ErrorOr<Reminder> createReminderResult = _remindersCreateUseCase.CreateReminder(request);
 
         return createReminderResult.Match(
             reminder => CreatedAtAction(
@@ -27,7 +34,7 @@ public class RemindersController(IRemindersUsecases remindersUseCases) : ApiCont
     [HttpGet("{id:guid}")]
     public IActionResult GetReminder(Guid id)
     {
-        ErrorOr<Reminder> reminderResult = _remindersUseCases.GetReminderById(id);
+        ErrorOr<Reminder> reminderResult = _remindersGetByIdUseCase.GetReminderById(id);
 
         return reminderResult.Match(
             reminder => Ok(MapReminderResponse(reminder)),
@@ -38,7 +45,7 @@ public class RemindersController(IRemindersUsecases remindersUseCases) : ApiCont
     [HttpGet()]
     public IActionResult GetAllReminders()
     {
-        var reminders = _remindersUseCases.GetAllReminders();
+        var reminders = _remindersGetAllUseCase.GetAllReminders();
         var response = reminders.Select(MapReminderResponse).ToList();
         
         return Ok(response);
@@ -47,7 +54,7 @@ public class RemindersController(IRemindersUsecases remindersUseCases) : ApiCont
     [HttpDelete("{id:guid}")]
     public IActionResult DeleteReminder(Guid id)
     {
-        ErrorOr<Deleted> deletedResult = _remindersUseCases.DeleteReminder(id);
+        ErrorOr<Deleted> deletedResult = _remindersDeleteUseCase.DeleteReminder(id);
 
         return deletedResult.Match(
             _ => NoContent(),

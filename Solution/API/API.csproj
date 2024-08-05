@@ -27,4 +27,9 @@
     <ProjectReference Include="..\TesteDTI.Contracts\TesteDTI.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="UseCases\Interfaces\IRemindersUsecases.cs" />
+    <Compile Remove="UseCases\RemindersUsecases.cs" />
+  </ItemGroup>
+
 </Project>

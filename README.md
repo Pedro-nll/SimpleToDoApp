@@ -78,15 +78,15 @@ Além disso, já organizei quais testes automáticos seriam necessários para ga
 | Deletar lembrete inexistente       |      |
 | Buscar todos lembretes             |      |
 
-Antes de começar a programar a API, tomei as decisões arquiteturais necessárias para garantir que minha aplicação fosse bem desenvolvida. Para tal, utilizei a arquitetura limpa, me preocupando com todos os princípios SOLID e os princípios de componentes para que a aplicação fosse coesa em todos os seus níveis.
+Antes de começar a programar a API, tomei as decisões arquiteturais necessárias para garantir que minha aplicação fosse bem desenvolvida. Para isso, utilizei a arquitetura limpa, preocupando-me com todos os princípios SOLID e com a coesão dos componentes, de modo a garantir que a aplicação fosse consistente em todos os seus níveis.
 
-Essa arquitetura é centrada no domínio da aplicação que, no contexto do desafio, se limita a apenas uma entidade. A partir dela, temos uma interface para a lógica da aplicação que será implementada por uma classe de usecases e uma interface para a comunicação com a camada de persistência. As rotas são implementadas conversando com a interface dos casos de uso.
+Essa arquitetura é centrada no domínio da aplicação, que, no contexto do desafio, se limita a uma única entidade. Além dessa entidade, a aplicação é organizada em três camadas distintas: controllers para entrada e saída, casos de uso para a lógica e a camada de persistência com o banco de dados. A comunicação com o banco de dados é definida por uma interface, e sua implementação adapta os métodos definidos para o banco de dados escolhido.
 
-Com isso, busquei entregar o comportamento esperado enquanto mantinha a estrutura interna organizada de maneira que qualquer alteração futura nos requisitos da aplicação tivesse seu custo de implementação estável. Ou seja, sem que fossem necessárias alterações no código já implementado, obedecendo ao "Open/Closed Principle". Como não temos múltiplos atores no contexto da aplicação e as classes estão bem divididas em seus papéis, o princípio de responsabilidade única está sendo atendido.
+No contexto do desafio, são necessários três casos de uso: deletar um lembrete, buscar todos os lembretes e criar um novo lembrete. Para cada um desses casos de uso, é criada uma interface que será usada para abstrair a implementação na comunicação com eles. As implementações dos casos de uso utilizam a interface de comunicação com o banco de dados, a qual é injetada com uma implementação na criação deles. Além disso, o controller depende apenas das interfaces dos casos de uso. Durante sua criação, os casos de uso são injetados, e o controller passa a abstrair todos os detalhes de baixo nível.
 
-Quanto aos outros princípios SOLID, ao fazer as classes se comunicarem com as interfaces (abstrações) e não as implementações, o princípio de substituição de Liskov e o princípio de inversão de dependências estão sendo obedecidos. Ou seja, as implementações (classes filhas) podem ser usadas no lugar das interfaces (classes pai) sem que o comportamento seja alterado e as classes de alto nível não precisam saber dos detalhes de baixo nível.
+Com isso, busquei entregar o comportamento esperado, mantendo a estrutura interna organizada de maneira que qualquer alteração futura nos requisitos da aplicação tenha um custo de implementação estável. Em outras palavras, sem a necessidade de alterações no código já implementado, obedecendo ao princípio "Open/Closed". Como não temos múltiplos atores no contexto da aplicação e as classes estão bem divididas em seus papéis, o princípio de responsabilidade única está sendo atendido.
 
-Por último, o princípio de segregação de interfaces é o único que não será propriamente implementado, afinal a interface de caso de uso terá todos os métodos necessários em uma única interface. Essa decisão foi tomada visto que os requisitos são simples e se limitam a um CRUD, sendo assim, não vi a necessidade de criar uma interface para cada um dos casos de uso, adaptando um pouco dos princípios de arquitetura limpa para um pouco do desenvolvimento rápido de aplicações.
+Quanto aos outros princípios SOLID, ao fazer as classes se comunicarem com interfaces (abstrações) e não com implementações, o princípio de substituição de Liskov e o princípio de inversão de dependências estão sendo obedecidos. Ou seja, as implementações (classes filhas) podem ser usadas no lugar das interfaces (classes pai) sem alterar o comportamento, e as classes de alto nível não precisam conhecer os detalhes de baixo nível. Por último, o princípio de segregação de interfaces está sendo obedecido na construção da API, visto que, cada classe implementa uma interface com apenas os métodos necessários para si, não trazendo depêndencias extras.
 
 ![Arquitetura da aplicação](docs/arquitetura.png)
 
@@ -108,6 +108,3 @@ Alguns detalhes importantes da implementação são:
 
 ### Lembrete sendo deletado
 ![Lembrete sendo deletado](./docs/gifs/DeleteReminder.gif)
-
-#### TODO
-Separar os usecases

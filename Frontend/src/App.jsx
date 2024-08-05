@@ -19,7 +19,7 @@ function App() {
     try {
       const response = await REST.getRequest("/reminders");
       if (!response) {
-        setError("Não foi possível buscar os lembretes. Verifique se a API está disponível.")
+        setError("Não foi possível buscar os lembretes. Verifique se a API está disponível.");
         return;
       }
       setReminders(response);
@@ -31,7 +31,7 @@ function App() {
   };
 
   const addReminder = async (reminder) => {
-    setError('')
+    setError('');
     try {
       const response = await REST.postRequest("/reminders", JSON.stringify(reminder));
       if (response.status === 400) {

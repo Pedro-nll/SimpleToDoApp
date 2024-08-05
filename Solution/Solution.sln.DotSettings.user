@@ -5,14 +5,14 @@
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/home/pedro/.var/app/com.jetbrains.Rider/cache/JetBrains/Rider2024.1/resharper-host/temp/Rider/vAny/CoverageData/_Solution.-1172558142/Snapshot/snapshot.utdcvr</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/CreateUnitTestDialog/TestProjectMapping/=829C8C3B_002D02A9_002D4EBD_002D8AD7_002DA7DFF401EE06/@EntryIndexedValue">CF47107E-055F-4607-9F10-FB4ADAC8BD37</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/CreateUnitTestDialog/TestTemplateMapping/=xUnit/@EntryIndexedValue">33ff99d8-b1ad-4ed5-a4fd-376b97c2c841</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4edab3e9_002Db0cd_002D4ed8_002D9cbb_002D34c433e7c1aa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="METHOD #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4edab3e9_002Db0cd_002D4ed8_002D9cbb_002D34c433e7c1aa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="METHOD #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::CF47107E-055F-4607-9F10-FB4ADAC8BD37::net8.0::API.Tests.Usecases.RemindersUsecasesTest.TestCreteReminderUsecase&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::CF47107E-055F-4607-9F10-FB4ADAC8BD37::net8.0::API.Tests.Entities.ReminderTest.TestCreateReminderInvalidDateToday&lt;/TestId&gt;
     &lt;TestId&gt;xUnit::CF47107E-055F-4607-9F10-FB4ADAC8BD37::net8.0::API.Tests.Entities.ReminderTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=80cd054e_002D3c52_002D45e8_002Da684_002D50557c6cae76/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="METHOD" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=80cd054e_002D3c52_002D45e8_002Da684_002D50557c6cae76/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="METHOD" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::CF47107E-055F-4607-9F10-FB4ADAC8BD37::net8.0::API.Tests.Usecases.RemindersUsecasesTest.METHOD&lt;/TestId&gt;
   &lt;/TestAncestor&gt;

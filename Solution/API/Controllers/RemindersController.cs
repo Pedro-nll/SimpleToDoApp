@@ -9,22 +9,28 @@ public class RemindersController(IRemindersUsecases remindersUseCases) : ApiCont
 {
     private readonly IRemindersUsecases _remindersUseCases = remindersUseCases;
     
-    [HttpPost()]
+    [HttpPost]
     public IActionResult CreateReminder(CreateReminderRequest request)
     {
-        //TODO: REFATORAR PRA MANDAR PRO CreateREminderUsecase o reuqest e ele cria o reminder
-        var requestToReminderResult = Reminder.Create(request.Name, request.Date);
-
-        if (requestToReminderResult.IsError)
-        {
-            return Problem(requestToReminderResult.Errors);
-        }
-
-        var reminder = requestToReminderResult.Value;
-        ErrorOr<Created> createReminderResult = _remindersUseCases.CreateReminder(reminder);
+        ErrorOr<Reminder> createReminderResult = _remindersUseCases.CreateReminder(request);
 
         return createReminderResult.Match(
-            _ => CreatedAsGetAllReminders(reminder),
+            reminder => CreatedAtAction(
+                actionName: nameof(GetReminder),
+                routeValues: new { id = reminder.Id },
+                value: MapReminderResponse(reminder)
+            ),
+            errors => Problem(errors)
+        );
+    }
+
+    [HttpGet("{id:guid}")]
+    public IActionResult GetReminder(Guid id)
+    {
+        ErrorOr<Reminder> reminderResult = _remindersUseCases.GetReminderById(id);
+
+        return reminderResult.Match(
+            reminder => Ok(MapReminderResponse(reminder)),
             errors => Problem(errors)
         );
     }

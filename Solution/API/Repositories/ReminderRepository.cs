@@ -39,4 +39,12 @@ public class ReminderRepository : IReminderRepository
         var result = _context.SaveChanges();
         return result > 0 ? Result.Deleted : RemindersErrors.Reminders.UnexpectedError;
     }
+    public ErrorOr<Reminder> GetReminderById(Guid id)
+    {
+        var reminder = _context.Reminders
+            .AsNoTracking()
+            .FirstOrDefault(r => r.Id == id);
+
+        return reminder != null ? reminder : RemindersErrors.Reminders.NotFound;
+    }
 }

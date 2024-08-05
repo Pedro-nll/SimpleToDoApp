@@ -40,8 +40,6 @@ docker run -d --network testeDTINetwork -p 5107:8080 --name apidockercontainer a
 docker build -t react-app -f Dockerfile.Frontend .
 docker run -d --network testeDTINetwork -p 5173:80 --name reactappdockercontainer react-app
 ```
-Aplicação acessível por http://localhost:5173
-Documentação da API acessível por http://localhost:5107/swagger/index.html
 
 ### Manual
 ```bash

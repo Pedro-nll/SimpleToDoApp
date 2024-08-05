@@ -41,4 +41,10 @@ var app = builder.Build();
     app.UseSwaggerUI();
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ReminderDbContext>();
+    dbContext.Database.Migrate(); // Apply any pending migrations
+}
+
 app.Run();

@@ -15,6 +15,9 @@ Repositório referente ao processo seletivo para estágio na DTI. Instruções f
 - [Tecnologias, ferramentas e linguagens utilizadas](#tecnologiasferramentaslinguagens-utilizadas)
 - [Decisões de projeto: arquitetura da solução e processo de desenvolvimento](#decisões-de-projeto)
 - [GIFs da aplicação funcionando](#gifs-com-a-aplicação-funcionando)
+    - [Lembrete criado com sucesso](#lembrete-criado-com-sucesso)
+    - [Erro ao criar lembrete](#erro-ao-criar-lembrete)
+    - [Lembrete sendo deletado](#lembrete-sendo-deletado)
 
 ## Premissas Assumidas
 
@@ -50,6 +53,7 @@ npm --prefix ./Frontend run dev
 - Swagger (Docs interativos para a API)
 - Docker && Docker-compose
 - Postcss
+- [Postman](./docs/TesteDTI.postman_collection.json)
 
 ## Decisões de Projeto
 
@@ -96,12 +100,14 @@ Alguns detalhes importantes da implementação são:
 
 
 ## GIFs com a aplicação funcionando
+### Lembrete criado com sucesso
+![Lembrete criado com sucesso](./docs/gifs/CreateReminderSuccess.gif)
 
+### Erro ao criar lembrete
+![Erro ao criar lembrete](./docs/gifs/CreateReminderError.gif)
+
+### Lembrete sendo deletado
+![Lembrete sendo deletado](./docs/gifs/DeleteReminder.gif)
 
 #### TODO
 Separar os usecases
-gifs fucnionando
-
-### EXPOR ESSES NO MD
-limite maximo (300 chars)
-validação de chars (utf8)

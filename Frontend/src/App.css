@@ -1,21 +1,18 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
-  gap: 10rem; 
 }
 
 .reminder-form {
-  width: 100%;
-  margin: 0 auto; 
+  width: 400px;
+  margin: 0 100px;
 }
 
 .reminder-form h2,
@@ -31,17 +28,17 @@
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.5rem;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 .reminder-form form button {
-  width: 110%; 
+  width: 105%;
   padding: 0.5rem 1rem;
   background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 .reminder-form form button:hover {
@@ -49,10 +46,15 @@
 }
 
 .reminder-list {
-  width: 100%;
+  width: 600px; 
   height: 400px;
   max-height: 400px;
   overflow-y: auto;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  align-items: center;
+  align-content: center;
+  text-align: center;
 }
 
 .reminder {
@@ -62,10 +64,12 @@
   padding: 0.5rem;
   border-bottom: 1px solid #ccc;
   transition: background-color 0.5s ease;
+  word-break: break-word; /* Break long words */
 }
 
 .reminder div {
   margin-right: 1rem;
+  overflow: hidden; /* Hide overflow */
 }
 
 .reminder button {
@@ -92,24 +96,27 @@
   transition: background-color 0.5s ease;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1333px) {
   .app-container {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
+}
 
+@media (max-width: 1332px) {
+  .app-container {
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .reminder-form {
     width: 40%;
+    margin: auto;
   }
 
   .reminder-list {
     width: 55%;
-  }
-}
-
-@media (max-width: 767px) {
-  .app-container {
-    flex-direction: column;
+    margin: 50px auto;
   }
 }

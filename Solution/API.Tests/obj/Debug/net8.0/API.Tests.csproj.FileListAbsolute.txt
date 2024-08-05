@@ -144,3 +144,4 @@
 /home/pedro/Desktop/Projetos/TesteDTI/Solution/API.Tests/obj/Debug/net8.0/API.Tests.pdb
 /home/pedro/Desktop/Projetos/TesteDTI/Solution/API.Tests/obj/Debug/net8.0/API.Tests.genruntimeconfig.cache
 /home/pedro/Desktop/Projetos/TesteDTI/Solution/API.Tests/obj/Debug/net8.0/ref/API.Tests.dll
+/home/pedro/Desktop/Projetos/TesteDTI/Solution/API.Tests/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll

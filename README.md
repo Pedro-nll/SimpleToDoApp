@@ -50,7 +50,7 @@ npm --prefix ./Frontend run dev
 
 ## Tecnologias/Ferramentas/Linguagens utilizadas
 - C#/React/SQLite
-- XUnit (X% Test Coverage)
+- XUnit (83% Test Coverage)
 - ErrorOr (C# Error Handling)
 - Axios (Chamadas do React para a API)
 - Swagger (Docs interativos para a API)
@@ -98,7 +98,6 @@ Alguns detalhes importantes da implementação são:
 
 - Além da validação dos dados no front-end, padronizei os modelos de entrada e saída em "contracts" e utilizei o design pattern abstract factory para a criação dos lembretes, aplicando as regras de negócio.
 - Adicionei validações para datas mal formatadas, datas passadas e nomes inexistentes. Também incluí a validação de limite máximo no tamanho dos nomes para garantir que não armazenaremos dados excessivamente grandes no banco de dados.
-- Implementei a validação de caracteres UTF-8 para garantir que não serão salvos caracteres problemáticos no banco de dados.
 - A interface da aplicação possui scroll na lista de lembretes e regras CSS para dispositivos com telas pequenas, garantindo uma experiência de usuário adequada em diferentes dispositivos.
 
 

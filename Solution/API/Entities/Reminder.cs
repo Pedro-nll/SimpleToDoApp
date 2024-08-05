@@ -29,10 +29,6 @@ public class Reminder
     {
         errors.Add(RemindersErrors.Reminders.InvalidName);
     }
-    else if (!IsValidUtf8(name))
-    {
-        errors.Add(RemindersErrors.Reminders.InvalidName);
-    }
 
     if (date <= DateTime.Now)
     {
@@ -46,17 +42,4 @@ public class Reminder
 
     return new Reminder(Guid.NewGuid(), name, date);
 }
-
-    private static bool IsValidUtf8(string text)
-    {
-        try
-        {
-            Encoding.UTF8.GetBytes(text);
-            return true;
-        }
-        catch (EncoderFallbackException)
-        {
-            return false;
-        }
-    }
 }
